@@ -2,9 +2,9 @@
 include "header.php";
 ?>
 
-    <table class="table table-dark table-striped">
-        <thead class="thead-dark">
-            <tr>
+<table class="table table-dark table-striped">
+    <thead class="thead-dark">
+        <tr>
             <th scope="col">Stt</th>
             <th scope="col">Tên Thuốc</th>
             <th scope="col">Loại Thuốc </th>
@@ -19,10 +19,11 @@ include "header.php";
             <th scope="col">Ngày Hết Hạn</th>
             <th scope="col">Nơi sản xuất</th>
             <th scope="col">Số Lượng</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+
+        </tr>
+    </thead>
+    <tbody>
+        <?php
                 // b1: kết nối cơ sở dữ liệu
                 include 'connect.php';
                 // b2: truy vấn sql
@@ -48,14 +49,20 @@ include "header.php";
                         echo     '<td>'.$row['expiration_date'].'</td>';
                         echo     '<td>'.$row['place'].'</td>';
                         echo     '<td>'.$row['quantity'].'</td>';
+                        echo '<td><a href="./update/update.php?id='.$row['id'].'">
+                        <i class="fas fa-user-edit"></i>
+                        </a></td>';
+                        echo '<td><a href="./delete/delete.php?id='.$row['id'].'">
+                        <i class="fas fa-user-times"></i>
+                        </a></td>';
                         echo '</tr>';
                     }
                 }
                 // b4: đóng kết nối
                 mysqli_close($conn);
             ?>
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
 
 
