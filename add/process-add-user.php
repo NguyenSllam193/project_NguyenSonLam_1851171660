@@ -14,7 +14,7 @@
     $quantity = $_POST['quantity'];
 
     include '../connect.php';
-    $sql = "INSERT INTO `medicine` (id, `name`, 'type', barcode, dose, code, cost_price, selling_price, expiry, company_name, production_date, expiration_date, place, quantity)
+    $sql = "INSERT INTO medicine ('name', 'type', barcode, dose, code, cost_price, selling_price, expiry, company_name, production_date, expiration_date, place, quantity)
     VALUE ('$name', '$type', '$barcode', '$dose', '$code', '$cost_price', '$selling_price', '$expiry', '$company_name'
     , '$production_date', '$expiration_date', '$place', '$quantity')";
 
