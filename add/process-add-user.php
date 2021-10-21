@@ -1,16 +1,26 @@
 <?php
     $name = $_POST['name'];
-    $user_name = $_POST['user_name'];
-    $pass_word = $_POST['pass_word'];
-    $date_of_birth = $_POST['date_of_birth'];
+    $type = $_POST['type'];
+    $barcode = $_POST['barcode'];
+    $dose = $_POST['dose'];
+    $code = $_POST['code'];
+    $cost_price = $_POST['cost_price'];
+    $selling_price = $_POST['selling_price'];
+    $expiry = $_POST['expiry'];
+    $company_name = $_POST['company_name'];
+    $production_date = $_POST['production_date'];
+    $expiration_date = $_POST['expiration_date'];
+    $place = $_POST['place'];
+    $quantity = $_POST['quantity'];
 
     include '../connect.php';
-    $sql = "INSERT INTO user ('name', user_name, pass_word, date_of_birth) 
-    VALUE ('$name', '$user_name', '$pass_word', '$date_of_birth')";
+    $sql = "INSERT INTO `medicine` (id, `name`, 'type', barcode, dose, code, cost_price, selling_price, expiry, company_name, production_date, expiration_date, place, quantity)
+    VALUE ('$name', '$type', '$barcode', '$dose', '$code', '$cost_price', '$selling_price', '$expiry', '$company_name'
+    , '$production_date', '$expiration_date', '$place', '$quantity')";
 
     $result = mysqli_query($conn, $sql);
     if($result > 0){
-        header("Location:index.php");
+        header("Location:../index.php");
     }else{
         echo "Lỗi";
     }

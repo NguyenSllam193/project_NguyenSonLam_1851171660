@@ -19,9 +19,9 @@ include "header.php";
             <th scope="col">Ngày Hết Hạn</th>
             <th scope="col">Nơi sản xuất</th>
             <th scope="col">Số Lượng</th>
-
         </tr>
     </thead>
+
     <tbody>
         <?php
                 // b1: kết nối cơ sở dữ liệu
@@ -52,7 +52,7 @@ include "header.php";
                         echo '<td><a href="./update/update.php?id='.$row['id'].'">
                         <i class="fas fa-user-edit"></i>
                         </a></td>';
-                        echo '<td><a href="./delete/delete.php?id='.$row['id'].'">
+                        echo '<td><a href="./delete/process-delete-user.php?id='.$row['id'].'">
                         <i class="fas fa-user-times"></i>
                         </a></td>';
                         echo '</tr>';
@@ -64,7 +64,7 @@ include "header.php";
     </tbody>
 </table>
 
-
+<a href="./add/add.php" class="btn btn-success">Add Medicine</a>
 
 
 <?php
